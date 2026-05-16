@@ -3,7 +3,7 @@
 Edge AI Fall Detection System — Streamlit Web App
 =============================================================================
 Model    : Quantised TFLite Neural Network
-Threshold: 0.3 (optimised for Fall Recall = 0.836)
+Threshold: 0.3 (optimised for Fall Recall = 0.8213)
 Input    : 28 extracted accelerometer features OR CSV upload
 Dataset  : SisFall (Sucerquia et al., 2017)
 =============================================================================
