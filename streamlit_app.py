@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import os
 import joblib
 import tensorflow as tf
 
@@ -7,7 +8,8 @@ import tensorflow as tf
 scaler = joblib.load("scaler.pkl")
 
 # Load TFLite model
-interpreter = tf.lite.Interpreter(model_path="model_quantised.tflite")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "model_quantised.tflite")
+interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
