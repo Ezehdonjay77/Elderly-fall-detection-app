@@ -20,6 +20,7 @@ import os
 # Uses lightweight tflite-runtime instead of
 # full TensorFlow to reduce deployment size
 # ─────────────────────────────────────────────
+"""
 try:
     import tflite_runtime.interpreter as tflite
 except ImportError:
@@ -31,6 +32,8 @@ except ImportError:
             "Please check requirements.txt"
         )
         st.stop()
+"""
+from ai_edge_litert.interpreter import Interpreter
 
 # ─────────────────────────────────────────────
 # PAGE CONFIGURATION
@@ -59,7 +62,7 @@ THRESHOLD = 0.3
 # ─────────────────────────────────────────────
 # LOAD MODEL
 # ─────────────────────────────────────────────
-
+""""
 @st.cache_resource
 def load_model():
     try:
@@ -70,7 +73,9 @@ def load_model():
         return interpreter, scaler, None
     except Exception as e:
         return None, None, str(e)
-
+"""
+interpreter = Interpreter(model_path="model_quantised.tflite")
+interpreter.allocate_tensors()
 # ─────────────────────────────────────────────
 # INFERENCE FUNCTION
 # ─────────────────────────────────────────────
@@ -135,7 +140,7 @@ st.markdown(
 )
 st.markdown(
     f"*Classification threshold: {THRESHOLD} "
-    f"— optimised for Fall Recall = 0.836*"
+    f"— optimised for Fall Recall = 0.8213*"
 )
 st.markdown("---")
 
