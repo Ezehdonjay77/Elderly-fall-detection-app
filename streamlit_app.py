@@ -117,11 +117,11 @@ st.sidebar.success("✅ Model loaded successfully")
 st.sidebar.markdown("---")
 st.sidebar.markdown(
     "**Model Performance**\n\n"
-    "- Fall Recall: 0.836\n"
-    "- Fall Precision: 0.815\n"
-    "- F1-Score: 0.825\n"
-    "- Accuracy: 88.46%\n"
-    "- Latency: ~0.011ms"
+    "- Fall Recall: 0.821\n"
+    "- Fall Precision: 0.813\n"
+    "- F1-Score: 0.817\n"
+    "- Accuracy: 88.01%\n"
+    "- Latency: ~0.036ms"
 )
 
 # Input Method
