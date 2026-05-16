@@ -8,8 +8,15 @@ import tensorflow as tf
 scaler = joblib.load("scaler.pkl")
 
 # Load TFLite model
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "model_quantised.tflite")
-interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
+import tensorflow as tf
+
+MODEL_PATH = "model_quantised.tflite"
+
+interpreter = tf.lite.Interpreter(
+    model_path=MODEL_PATH,
+    experimental_delegates=[]
+)
+
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
